@@ -41,7 +41,7 @@ Once the server is up and running, you can interact with the API using HTTP requ
   - `/auth/register`: Register a new user.
   - `/auth/login`: Authenticate user login.
   - `/auth/logout`: Log out the authenticated user.
-  - `/auth/refreshToken`: Refresh authentication token.
+  - `/auth/token/refresh`: Refresh authentication token.
   
 - **Data Retrieval Endpoints:**
   - `/data`: Fetch data from public APIs with filtering options.
@@ -55,10 +55,9 @@ API documentation is available using Swagger UI. Access the documentation by nav
 
 ## Contributing
 
-Contributions to the Carbon Cell Backend API project are welcome! Feel free to submit bug reports, feature requests, or pull requests. Please follow the [contribution guidelines](CONTRIBUTING.md) when contributing to this project.
+Contributions to the Carbon Cell Backend API project are welcome! Feel free to submit bug reports, feature requests, or pull requests.
 
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Thank you for using the Carbon Cell Backend API! If you have any questions or feedback, please don't hesitate to contact us.
