@@ -1,3 +1,4 @@
+const { VALIDATION_ERROR } = require("../middlewares/errors/ApiError");
 const { doGet } = require("./http.service");
 
 class DataService{
@@ -17,10 +18,10 @@ class DataService{
           entries = entries.slice(0, limit);
         }
   
-        return entries;
+        return {count:entries.length,entries};
   
       } catch (error) {
-        throw new Error("Failed to fetch data from the public API");
+        throw new VALIDATION_ERROR("validation error", 400, "Failed to fetch data from the public API");
       }
     }
 }

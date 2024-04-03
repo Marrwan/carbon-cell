@@ -9,11 +9,13 @@ const options = {
       info: {
         title: "Carbon Cell Backend Developer Assessment API",
         version: "1.0.0",
+       
         description: "This API serves as the backend solution for the Carbon Cell Backend Developer Assessment. It includes various functionalities such as user authentication with JWT, API endpoints for data retrieval, Swagger documentation integration, secure access for authenticated users, and optional Ethereum account balance retrieval using web3.js.",
         license: {
           name: "MIT",
           url: "https://spdx.org/licenses/MIT.html",
         },
+       
         contact: {
           name: "Abdulbasit Damililola Alabi",
           url: "https://x.com/_strangedev_",
@@ -48,7 +50,7 @@ const options = {
 // }
 
 var option = {
-    explorer: true,
+    // explorer: true,
     swaggerOptions: {
         validatorUrl: null,
         // url: 'http://petstore.swagger.io/v2/swagger.json'
@@ -57,6 +59,9 @@ var option = {
 const specs = swaggerJsdoc(options)
 
 module.exports = (app) => {
+  app.get('/', (req, res)=>{
+    res.redirect('/docs')
+  })
   app.use('/docs', swaggerUi.serve, swaggerUi.setup(specs, option))
   app.get('/docs.json', (req,res)=>{
     res.setHeader("Content-Type", "application/json");

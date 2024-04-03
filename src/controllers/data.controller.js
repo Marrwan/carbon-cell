@@ -4,7 +4,7 @@ const { withData } = require("../utils/response.utils");
 const data_service = new DataService;
 const getLists = async (request, response, next) => {
     try {
-     const {limit, category} = request.query;
+     const {limit, category} = request.validData;
      let data = await data_service.getLists({limit, category});
      return withData(response, data)
     } catch (error) {

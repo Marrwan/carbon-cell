@@ -1,38 +1,8 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db");
 
-/**
-* @swagger
-*
-*components:
-*  schemas:
-*    LoginRequest:
-*      type: object
-*      required:
-*        - email
-*        - password
-*      properties:
-*        email:
-*          type: string
-*          description: User's email address
-*          format: email
-*          example: user@example.com
-*        password:
-*          type: string
-*          description: User's password
-*          minLength: 6
-*          writeOnly: true  # Hide password in response
-*
-*  securitySchemes:
-*    bearerAuth:
-*      type: http
-*      scheme: bearer
-*      bearerFormat: JWT  # Indicate JWT format for token
-*
-*security:
-*  - bearerAuth: []
-* 
-*/
+
+
 const User = sequelize.define("User", {
   email: {
     type: DataTypes.STRING,
